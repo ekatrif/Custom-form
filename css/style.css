@@ -35,6 +35,11 @@ label {
   margin: 5px;
 }
 
+label span {
+  font-size: 20px;
+  font-weight: 500;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="number"] {
@@ -100,8 +105,8 @@ button[type="submit"] {
   margin-top: 40px;
   align-self: center;
   cursor: pointer;
-  font-weight: 300;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 500;
   color: #fff;
 }
 button[type="submit"]:hover {
@@ -249,6 +254,7 @@ button[type="submit"]:hover {
 }
 
 /******* Стилизация input[type="file"] *******/
+
 input[type="file"] {
   opacity: 0;
   visibility: hidden;
@@ -273,4 +279,44 @@ input[type="file"] {
   background-color: olivedrab;
   color: #fff;
   transition: all 0.3s ease-out;
+}
+
+/******* Адаптив *******/
+
+@media (max-width: 767px) {
+  #cvv > label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  form {
+    width: 400px;
+  }
+}
+
+@media (max-width: 420px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"] {
+    width: 200px;
+  }
+
+  .custom-select,
+  .custom-select__title {
+    width: 200px;
+  }
+  .custom-select {
+    margin: 0;
+  }
+  form {
+    padding: 10px;
+    width: 230px;
+  }
+  .file-upload__custom-field {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  button[type="submit"] {
+    margin-top: 15px;
+  }
 }
