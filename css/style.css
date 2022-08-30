@@ -1,0 +1,276 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-size: 18px;
+  color: #fff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 50px;
+  margin: auto auto;
+  width: 600px;
+  background-color: rgba(33, 33, 33, 0.9);
+  border-radius: 20px;
+}
+label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  width: 300px;
+  padding: 10px 15px;
+  border: 1px solid white;
+  border-radius: 6px;
+  color: #fff;
+  background-color: transparent;
+  font-weight: 300;
+  font-size: 100%;
+}
+input[type="text"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder,
+input[type="number"]::-webkit-input-placeholder {
+  color: white;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+  border-color: yellowgreen;
+  outline: none;
+}
+.checkbox {
+  justify-self: flex-start;
+  margin-right: 274px;
+  position: relative;
+}
+input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+}
+input[type="checkbox"] + .checkbox-title::before {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked + .checkbox-title::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: yellowgreen;
+  border-radius: 3px;
+  left: 8px;
+  top: 6px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  padding: 10px 16px;
+  background-color: olivedrab;
+  color: #000;
+  border-radius: 10px;
+  margin-top: 40px;
+  align-self: center;
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 18px;
+  color: #fff;
+}
+button[type="submit"]:hover {
+  background-color: #fff;
+  color: olivedrab;
+  transition: all 0.5s ease-out;
+}
+
+/******* Стилизация select *******/
+
+.custom-select {
+  position: relative;
+  display: flex;
+  width: 300px;
+  height: 40px;
+  margin: 0 auto;
+  z-index: 1;
+}
+.custom-select[data-state="active"] .custom-select__title::before {
+  transform: translate(-3px, -50%) rotate(-45deg);
+}
+.custom-select[data-state="active"] .custom-select__title::after {
+  transform: translate(3px, -50%) rotate(45deg);
+}
+.custom-select[data-state="active"] .custom-select__content {
+  border-width: 1px;
+  border-color: #c7ccd1;
+}
+.custom-select[data-state="active"] .custom-select__label {
+  max-height: 40px;
+  border-width: 1px;
+}
+.custom-select[data-state="active"] .custom-select__label::before {
+  opacity: 1;
+}
+
+.custom-select__title {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 100%;
+  padding: 10px 15px;
+  border: 1px solid white;
+  border-radius: 6px;
+
+  background-color: transparent;
+  font-weight: 300;
+  font-size: 100%;
+  cursor: pointer;
+  z-index: 2;
+}
+.custom-select__title::before,
+.custom-select__title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  display: block;
+  width: 10px;
+  height: 2px;
+  transition: all 0.3s ease-out;
+  background-color: #333333;
+  transform: translate(-3px, -50%) rotate(45deg);
+}
+.custom-select__title::after {
+  transform: translate(3px, -50%) rotate(-45deg);
+}
+.custom-select__title:hover {
+  border-color: olivedrab;
+}
+.custom-select__title:hover::before,
+.custom-select__title:hover::after {
+  background-color: #fff;
+}
+
+.custom-select__content {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background-color: #373737;
+  border: 1px solid #fff;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-top: none;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  transition: all 0.3s ease-out;
+  z-index: 1;
+}
+
+.custom-select__input {
+  display: none;
+  pointer-events: none;
+}
+.custom-select__input:checked + label {
+  background-color: #fff !important;
+  color: #000;
+  background-color: #dedede;
+}
+.custom-select__input:checked + label::after {
+  content: attr(data-value);
+}
+.custom-select__input:disabled + label {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.custom-select__label {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 40px;
+  max-height: 0;
+  padding: 0 16px;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  margin: 0;
+}
+.custom-select__label + input + .custom-select__label {
+  border-top: 0 solid #c7ccd160;
+}
+.custom-select__label:hover {
+  background-color: #fff !important;
+  color: #000;
+}
+.custom-select__label::before {
+  content: attr(data-value);
+  transition: all 0.2s ease-out;
+  opacity: 0;
+}
+.custom-select__label::after {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  padding: 8px 16px;
+  color: #fff;
+  z-index: -1;
+}
+
+/******* Стилизация input[type="file"] *******/
+input[type="file"] {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 300px;
+}
+.file-upload__custom-field {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  cursor: pointer;
+}
+.file-upload__button {
+  padding: 5px 8px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+}
+.file-upload__button:hover {
+  background-color: olivedrab;
+  color: #fff;
+  transition: all 0.3s ease-out;
+}
