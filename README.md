@@ -1,2 +1,1 @@
-# Custom-form
-Форма с кастомными полями (select, checkbox)
+# Форма с кастомными полями (select, checkbox)
