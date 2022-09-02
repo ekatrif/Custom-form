@@ -55,7 +55,7 @@ input[type="number"] {
 input[type="text"]::-webkit-input-placeholder,
 input[type="email"]::-webkit-input-placeholder,
 input[type="number"]::-webkit-input-placeholder {
-  color: white;
+  color: lightslategray;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -210,7 +210,7 @@ button[type="submit"]:hover {
   background-color: #dedede;
 }
 .custom-select__input:checked + label::after {
-  content: attr(data-value);
+  /* content: attr(data-value); */
 }
 .custom-select__input:disabled + label {
   opacity: 0.6;
