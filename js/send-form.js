@@ -1,11 +1,11 @@
 const form = document.getElementById("cvv");
+let data = null;
 
 function serializeForm(formNode) {
-  console.log(formNode.elements);
+  //console.log(formNode.elements);
   const formElements = [...formNode];
-  console.log(formElements);
-  const data = formElements
-
+  //console.log(formElements);
+  data = formElements
     .map((element) => {
       const { name, value } = element;
       if (element.name === "customSelect" && element.hasAttribute("checked")) {
@@ -17,10 +17,25 @@ function serializeForm(formNode) {
     })
     .filter((element) => element.name !== "customSelect")
     .filter((element) => !!element.name);
-  console.log(data);
+  //console.log(data);
+  return data;
 }
-form.addEventListener("submit", function (event) {
+
+async function sendData(data) {
+  console.log("Отправляем данные:", data);
+  return await fetch("/api/apply/", {
+    method: "POST",
+    headers: { "Content-Type": "multipart/form-data" },
+    body: data,
+  });
+}
+
+async function handleFormSubmit(event) {
   event.preventDefault();
-  console.log("Отправка");
-  serializeForm(form);
-});
+  //console.log("Отправка");
+  serializeForm(event.target);
+  const response = await sendData(data);
+  console.log(response);
+}
+
+form.addEventListener("submit", handleFormSubmit);
