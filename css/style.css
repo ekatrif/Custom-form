@@ -55,7 +55,7 @@ input[type="number"] {
 input[type="text"]::-webkit-input-placeholder,
 input[type="email"]::-webkit-input-placeholder,
 input[type="number"]::-webkit-input-placeholder {
-  color: white;
+  color: lightslategray;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
