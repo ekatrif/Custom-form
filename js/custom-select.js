@@ -16,7 +16,7 @@ selectSingleTitle.addEventListener("click", () => {
 // Закрыть при выборе option
 customSelectContent.addEventListener("click", function (event) {
   if (event.target.classList.contains("custom-select__label")) {
-    selectSingleTitle.textContent = event.target.textContent;
+    selectSingleTitle.textContent = event.target.getAttribute("data-value");
     selectSingle.setAttribute("data-state", "");
   }
 });

@@ -210,7 +210,7 @@ button[type="submit"]:hover {
   background-color: #dedede;
 }
 .custom-select__input:checked + label::after {
-  content: attr(data-value);
+  /* content: attr(data-value); */
 }
 .custom-select__input:disabled + label {
   opacity: 0.6;

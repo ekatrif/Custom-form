@@ -30,14 +30,14 @@
           <div class="custom-select" data-state="">
             <div class="custom-select__title"></div>
             <div class="custom-select__content">
-              <input id="Vue" class="custom-select__input" type="radio" name="singleSelect" checked />
+              <input id="Vue" class="custom-select__input" type="radio" name="customSelect" checked />
               <label for="Vue" tabindex="0" class="custom-select__label" data-value="Vue"></label>
-              <input id="React" class="custom-select__input" type="radio" name="singleSelect" />
+              <input id="React" class="custom-select__input" type="radio" name="customSelect" />
               <label for="React" tabindex="0" class="custom-select__label" data-value="React"></label>
-              <input id="Angular" class="custom-select__input" type="radio" name="singleSelect" />
+              <input id="Angular" class="custom-select__input" type="radio" name="customSelect" />
               <label for="Angular" tabindex="0" class="custom-select__label" data-value="Angular"></label>
-              <input id="singleSelect3" class="custom-select__input" type="radio" name="singleSelect" />
-              <label for="singleSelect3" tabindex="0" class="custom-select__label" data-value="Только Vanilla JS"></label>
+              <input id="vanilla-js" class="custom-select__input" type="radio" name="customSelect" />
+              <label for="vanilla-js" tabindex="0" class="custom-select__label" data-value="Только Vanilla JS"></label>
             </div>
           </div>
         </label>
@@ -45,7 +45,7 @@
         <label>
           <span>Есть опыт работы</span>
           <div class="checkbox">
-            <input type="checkbox" name="nasa-experience" value="0" />
+            <input type="checkbox" name="experience" value="false" />
             <span class="checkbox-title"></span>
           </div>
         </label>
@@ -53,7 +53,7 @@
         <label class="file-upload">
           <span>Резюме:</span>
           <div class="file-upload__wrapper">
-            <input type="file" accept="image/jpeg/pdf" name="photo" required />
+            <input type="file" accept="image/jpeg/pdf" name="cvv" required />
             <div class="file-upload__custom-field">
               <div class="file-upload__button">Выбрать...</div>
               <div class="file-upload__message">Файл не выбран</div>
@@ -66,6 +66,7 @@
     </div>
     <script src="./js/custom-select.js"></script>
     <script src="./js/custom-upload.js"></script>
-    <script src="./js/form.js"></script>
+    <script src="./js/send-form.js"></script>
+    <script src="./js/custom-checkbox.js"></script>
   </body>
 </html>
